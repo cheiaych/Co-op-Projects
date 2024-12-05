@@ -1,0 +1,7 @@
+C:\Users\T0204775\source\repos\GuidewayDataReader\GuidewayDataReader\bin\Debug\GuidewayDataReader.exe.config
+C:\Users\T0204775\source\repos\GuidewayDataReader\GuidewayDataReader\bin\Debug\GuidewayDataReader.exe
+C:\Users\T0204775\source\repos\GuidewayDataReader\GuidewayDataReader\bin\Debug\GuidewayDataReader.pdb
+C:\Users\T0204775\source\repos\GuidewayDataReader\GuidewayDataReader\obj\Debug\GuidewayDataReader.csproj.ResolveComReference.cache
+C:\Users\T0204775\source\repos\GuidewayDataReader\GuidewayDataReader\obj\Debug\GuidewayDataReader.csproj.CoreCompileInputs.cache
+C:\Users\T0204775\source\repos\GuidewayDataReader\GuidewayDataReader\obj\Debug\GuidewayDataReader.exe
+C:\Users\T0204775\source\repos\GuidewayDataReader\GuidewayDataReader\obj\Debug\GuidewayDataReader.pdb

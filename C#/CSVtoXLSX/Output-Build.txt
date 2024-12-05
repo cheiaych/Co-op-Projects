@@ -1,0 +1,3 @@
+﻿1>------ Rebuild All started: Project: CSVtoXLSX, Configuration: Debug Any CPU ------
+1>  CSVtoXLSX -> C:\Users\T0204775\source\repos\CSVtoXLSX\CSVtoXLSX2\bin\Debug\CSVtoXLSX.exe
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========

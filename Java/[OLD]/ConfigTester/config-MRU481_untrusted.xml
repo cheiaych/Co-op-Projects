@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:thales="ThalesTypes" xsi:schemaLocation="configSupport.xsd" thales:read="0" thales:write="0">
+   <general thales:write="2" thales:reboot="true">
+     <hostname>MRU1A-untrusted</hostname>
+   </general>
+   <radio thales:write="1" thales:reboot="true">
+      <general>
+         <operational-mode>none</operational-mode>
+         <ssid>Thales</ssid>
+         <bcast-ssid>no</bcast-ssid>
+         <power-output-db-modem-0>29</power-output-db-modem-0>
+         <power-output-db-modem-1>29</power-output-db-modem-1>
+      </general>
+      <radio-80211>
+         <mode-80211i>WPA2-AES</mode-80211i>
+         <rekey-policy>disabled</rekey-policy>
+         <rekey-period>84600</rekey-period>
+         <wpa-protocol-timeout>80</wpa-protocol-timeout>
+         <eapol-response-timeout>20</eapol-response-timeout>   <!-- ms -->
+         <wep-key>0001020304</wep-key>
+         <wep-auth-type>psk-wpa</wep-auth-type>
+         <wpa2-key>MTAencryption10</wpa2-key>
+         <scan-type>active</scan-type>
+         <active-scan-time>20</active-scan-time>
+         <passive-scan-time>1200</passive-scan-time>
+         <preamble>short</preamble>
+         <short-retry-limit>3</short-retry-limit>
+         <long-retry-limit>4</long-retry-limit>
+         <listen-interval>100</listen-interval>
+         <dtim-period>3</dtim-period>
+         <join-timeout>96</join-timeout>
+         <auth-timeout>96</auth-timeout>
+         <association-timeout>96</association-timeout>
+         <link-loss-threshold>255</link-loss-threshold>
+         <fragmentation-threshold>2346</fragmentation-threshold>
+         <rts-threshold>2347</rts-threshold>
+         <network-expiry-time-ms>6000</network-expiry-time-ms>
+      <noise-period-of-observation-hours>1</noise-period-of-observation-hours> <!-- minimum 0 = disable noise acquisition, maximum 168 hours = 1 week -->
+      <clear-channel-access-threshold-dbm-modem-0>-72</clear-channel-access-threshold-dbm-modem-0>
+      <clear-channel-access-threshold-dbm-modem-1>-72</clear-channel-access-threshold-dbm-modem-1>
+      </radio-80211>
+      <FHSS>
+         <beacon-interval>100</beacon-interval>
+         <dwell-time>64</dwell-time>
+         <regulatory-region>North America</regulatory-region>
+		 <!-- hop-pattern should be one of, 1, 7, 13, 25, 37, 43, 49, 61 if we are sending two probe requests per dwell period -->
+         <hop-pattern>1</hop-pattern>
+		 <hopping-set>1</hopping-set>                         <!-- AP only -->
+		 <hopping-sequence>1</hopping-sequence>    			  <!-- AP only -->
+         <initial-scan-time>1000</initial-scan-time>
+         <scan-channel-index>3</scan-channel-index>
+         <scan-step-index>0</scan-step-index>
+         <tracking>off</tracking>
+         <tracking-interval>27</tracking-interval>
+         <roaming>on</roaming>
+         <roaming-scan-time>8</roaming-scan-time>
+         <initiate-roaming-low-threshold>-75</initiate-roaming-low-threshold>
+         <initiate-roaming-high-threshold>-15</initiate-roaming-high-threshold>
+         <packets-for-rssi-average>8</packets-for-rssi-average>
+         <min-joinable-rssi-threshold>-70</min-joinable-rssi-threshold>
+         <max-joinable-rssi-threshold>-10</max-joinable-rssi-threshold>
+    <neighboring-beacon-rate>0</neighboring-beacon-rate> <!-- in dwell time unit (AP only) -->
+      </FHSS>
+      <antenna-diversity>
+         <antenna-selection>diversity</antenna-selection>
+      </antenna-diversity>
+   </radio>
+
+
+<switch>
+    <entry>
+      <port>0</port>
+      <enabled>false</enabled>
+      <speed>100</speed>
+      <duplex>full</duplex>
+    </entry>
+    <entry>
+      <port>1</port>
+      <enabled>false</enabled>
+      <speed>100</speed>
+      <duplex>full</duplex>
+    </entry>
+    <entry>
+      <port>2</port>
+      <enabled>true</enabled>
+      <speed>100</speed>
+      <duplex>full</duplex>
+    </entry>
+    <entry>
+      <port>3</port>
+      <enabled>true</enabled>
+      <speed>100</speed>
+      <duplex>full</duplex>
+    </entry>
+  </switch>
+  <pvlan>
+     <entry>
+        <from-port>0</from-port>
+        <port-vector>2e</port-vector>
+     </entry>
+     <entry>
+        <from-port>1</from-port>
+        <port-vector>2d</port-vector>
+     </entry>
+     <entry>
+        <from-port>2</from-port>
+        <port-vector>2b</port-vector>
+     </entry>
+     <entry>
+        <from-port>3</from-port>
+        <port-vector>27</port-vector>
+     </entry>
+     <entry>
+        <from-port>4</from-port>
+        <port-vector>0</port-vector>
+     </entry>
+     <entry>
+        <from-port>5</from-port>
+        <port-vector>f</port-vector>
+     </entry>
+     <entry>
+        <from-port>6</from-port>
+        <port-vector>0</port-vector>
+     </entry>
+  </pvlan>
+  <vars>
+   <entry>
+        <TCV>TCV_PARTNER_ADDR</TCV>
+        <value>172.16.128.1</value>
+     </entry>
+     <entry>
+        <TCV>TCV_CDAR_PORT</TCV>
+        <value>12979</value>
+     </entry>
+     <entry>
+        <TCV>TCV_BRIDGE_ADDR</TCV>
+        <value>172.16.128.2</value>
+     </entry>
+     <entry>
+        <TCV>TCV_BRIDGE_NETMASK</TCV>
+        <value>255.254.0.0</value>
+     </entry>
+     <entry>
+        <TCV>TCV_PRIVATE_ADDR</TCV>
+        <value>192.168.1.1</value>
+     </entry>
+     <entry>
+        <TCV>TCV_PRIVATE_NETMASK</TCV>
+        <value>255.255.255.0</value>
+     </entry>
+     <entry>
+        <TCV>TCP_PRIVATE_PARTNER</TCV>
+        <value>192.168.1.2</value>
+     </entry>
+  </vars> 
+   <network>
+        <route>
+            <ip>192.168.14.0</ip>
+            <subnet>255.255.255.248</subnet>
+            <gateway>172.30.128.4</gateway>
+            <enabled>true</enabled>
+        </route>
+        <route>
+            <ip>192.168.6.0</ip>
+            <subnet>255.255.255.248</subnet>
+            <gateway>172.30.128.4</gateway>
+            <enabled>true</enabled>
+        </route>
+        <route>
+            <ip>192.168.15.0</ip>
+            <subnet>255.255.255.248</subnet>
+            <gateway>172.30.128.4</gateway>
+            <enabled>true</enabled>
+        </route>
+        <route>
+            <ip>192.168.7.0</ip>
+            <subnet>255.255.255.248</subnet>
+            <gateway>172.30.128.4</gateway>
+            <enabled>true</enabled>
+        </route>
+        <route>
+            <ip>172.16.128.0</ip>
+            <subnet>255.254.0.0</subnet>
+            <gateway>172.16.128.2</gateway>
+            <enabled>true</enabled>
+        </route>
+    <interface>
+      <name>eth0</name>
+      <ip>172.30.128.2</ip>
+      <netmask>255.255.255.248</netmask>
+      <enabled>true</enabled>
+    </interface>
+  </network>
+  <qos>
+     <interface>wlan0</interface>
+     <C1Rate>49kbit</C1Rate>
+     <C1Ceil>50kbit</C1Ceil>
+     <C2Rate>1kbit</C2Rate>
+     <C2Ceil>50kbit</C2Ceil>
+     <OverallRate>50kbit</OverallRate>
+  </qos>
+  <hostsconfig>
+     <localhost>
+        <address>127.0.0.1</address>
+        <name>MRVL_LINUX</name>
+        <localdomain>localhost.localdomain</localdomain>
+     </localhost>
+     <certauthority>
+        <address>10.0.128.2</address>
+        <name>CA</name>
+        <!--
+              CA server protocol SCEP or NDES
+              SCEP for WS2003 and earlier, NDES for WS2008 and later
+        -->
+        <ca_protocol>NDES</ca_protocol>
+     </certauthority>
+     <uNTP1>0.0.0.0</uNTP1>
+     <uNTP2>0.0.0.0</uNTP2>
+     <uNTP3>0.0.0.0</uNTP3>
+     <tNTP1>10.0.128.5</tNTP1>
+     <tNTP2>10.8.128.5</tNTP2>
+     <tNTP3>0.0.0.0</tNTP3>
+     <trustedTrapSink>10.0.128.2</trustedTrapSink>
+     <untrustedTrapSink>10.0.128.2</untrustedTrapSink>
+  </hostsconfig>
+  <misc>
+    <coupling-detection>off</coupling-detection>
+    <lan-on-trusted-side>on</lan-on-trusted-side> <!-- on uses port 1-B to 4-B, off uses port 1-A to 4-A (MR only) -->
+  </misc>
+     <snmp>
+     <trap>
+       <DAR>
+          <enabled>false</enabled>
+       </DAR>
+     </trap>
+  </snmp>
+  <reboot-log>
+     <records-limit>128</records-limit>
+     <records-file>/mnt/data/etc/bootlog.txt</records-file>
+  </reboot-log>
+  <project-config> 
+    <prjCfgFileVersion>3.6</prjCfgFileVersion>
+    <prdCfgFileTempVersion>TCV_v 1.0.0</prdCfgFileTempVersion>
+    <prdCfgTempVersion>TCV_v 1.1.2</prdCfgTempVersion>
+    <customerLineName>MTA</customerLineName>
+  </project-config> 
+    <oisd>
+    <enabled>true</enabled>
+    <remote_log>192.168.1.2</remote_log>
+    <heartbeat_interval>3600</heartbeat_interval>
+    <filetrip_interval>10</filetrip_interval>
+    <filetrip_guard>600</filetrip_guard>
+    <mount_alert_interval>30</mount_alert_interval>
+    <whitelist>
+      <whitelist_interval>300</whitelist_interval>
+      <directory>/sbin /bin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin</directory>
+    </whitelist>
+    <untrusted_filter>
+       <enabled>true</enabled>
+       <ntp ip="172.22.129.1" port="123" />
+       <ntp ip="172.22.129.3" port="123" />
+       <ipsec ip="10.12.80.1" ike_port="500"/>
+       <ipsec ip="10.12.80.31" ike_port="500"/>
+       <ipsec ip="10.92.128.1" ike_port="500"/>
+       <ipsec ip="172.22.146.1" ike_port="500"/>
+       <ipsec ip="10.38.19.128" ike_port="500"/>
+    </untrusted_filter>
+  </oisd>
+</config> 
+
+

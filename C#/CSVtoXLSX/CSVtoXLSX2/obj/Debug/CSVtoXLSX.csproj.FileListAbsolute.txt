@@ -1,0 +1,16 @@
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\bin\Debug\CSVtoXLSX.exe.config
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\bin\Debug\CSVtoXLSX.exe
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\bin\Debug\CSVtoXLSX.pdb
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\obj\Debug\CSVtoXLSX.csproj.ResolveComReference.cache
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\obj\Debug\CSVtoXLSX.csproj.CoreCompileInputs.cache
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\obj\Debug\CSVtoXLSX.exe
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\obj\Debug\CSVtoXLSX.pdb
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\obj\Debug\CSVtoXLSX.csprojAssemblyReference.cache
+C:\Users\T0204775\source\repos\CSVtoXLSX\CSVtoXLSX2\bin\Debug\CSVtoXLSX.exe.config
+C:\Users\T0204775\source\repos\CSVtoXLSX\CSVtoXLSX2\bin\Debug\CSVtoXLSX.exe
+C:\Users\T0204775\source\repos\CSVtoXLSX\CSVtoXLSX2\bin\Debug\CSVtoXLSX.pdb
+C:\Users\T0204775\source\repos\CSVtoXLSX\CSVtoXLSX2\obj\Debug\CSVtoXLSX.csprojAssemblyReference.cache
+C:\Users\T0204775\source\repos\CSVtoXLSX\CSVtoXLSX2\obj\Debug\CSVtoXLSX.csproj.ResolveComReference.cache
+C:\Users\T0204775\source\repos\CSVtoXLSX\CSVtoXLSX2\obj\Debug\CSVtoXLSX.csproj.CoreCompileInputs.cache
+C:\Users\T0204775\source\repos\CSVtoXLSX\CSVtoXLSX2\obj\Debug\CSVtoXLSX.exe
+C:\Users\T0204775\source\repos\CSVtoXLSX\CSVtoXLSX2\obj\Debug\CSVtoXLSX.pdb

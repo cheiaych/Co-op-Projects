@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thales="ThalesTypes" xsi:schemaLocation="configSupport.xsd"
+        thales:read="0" thales:write="0">
+
+   <general thales:write="2" thales:reboot="true">
+      <hostname>MRU1A-trusted</hostname>
+   </general>
+   
+   <!-- radio parameters -->
+   <radio thales:write="1" thales:reboot="true">
+      <!-- be sure to set SSID correctly! -->
+      <general>
+         <operational-mode>station</operational-mode>
+      </general>
+           
+   </radio>
+   
+  <!--
+        SD bank switching function controlled by dgwd (dead-gateway-detection
+        daemon) which operates by ping-tracking the SD peers.
+   -->
+   <router-ping-tracking thales:write="1" thales:read="0" thales:reboot="true">
+      <!--
+           To activate, set text to either once or continuous.  To disable 
+		   this functionality set text to off. 
+		   Set ping-count attribute to the number of failed pings that will trigger
+		   a change in the SD peer. Set ping-wait to the time in seconds to wait for
+		   a ping echo before marking it failed.
+      -->
+	  <activated ping-count="3" ping-wait="5" background-ping-wait="1">off</activated>
+      <!-- Names must match conn ids in ipsec.conf that you want to track -->
+      <router>SDBANK_A</router>
+      <router>SDBANK_B</router>
+      <router>SDBANK_C</router>
+      <router>SDBANK_D</router>
+	</router-ping-tracking>
+  
+
+   <!--
+        IPsec parameters. /usr/local/etc/ipsec.conf will be generated using a
+        template file stored in /mnt/data/etc/certs/ipsec.conf.template. This
+        data is used to generate the connection list that will be substituted
+        for the %%CONNECTIONS%% and %%LOCAL%% labels in that template. 
+		If this block is null %%CONNECTIONS%% and %%LOCAL will be replaced with an
+		empty strings, and tunnels will not work.
+   -->     
+   <ipsec thales:write="3">
+   
+		<!--
+            Parameters for the local end of the ipsec tunnel.
+			left-ip and left-id-ip should be the IP address of the trusted CPU on the
+			untrusted network (eth1)
+		-->
+		<local>
+			<left-ip>172.16.128.1</left-ip>
+			<left-id-ip>172.16.128.1</left-id-ip>
+			<left-subnet>10.6.88.0/30</left-subnet>
+		</local>
+      <!--
+            this can be blank if you are not using dgwd; the conn %default in
+            ipsec.conf will suffice
+      -->
+      <connection> 
+         <!--
+              String name which will go in /etc/hosts. It corresponds to conn
+              NAME
+         -->
+         <name>SDBANK_A</name>
+         <!-- remote peer's ip address; corresponds to right=ipaddr -->
+         <right-ip>192.168.6.1</right-ip>
+         <!--
+              remote peer's id; by convention same as ip address; corresponds
+              to rightid=ipaddr
+         -->
+         <right-id-ip>192.168.6.1</right-id-ip>
+         <!--
+              remote peer's protected subnet; write to ipsec.conf as the line
+              rightsubnet=subnet_addr
+         -->
+         <right-subnet>10.6.66.0/28</right-subnet>
+		 
+		 <!--
+			Specifies how the connection will be brought up:
+			Options are:
+			ignore - as if the connection were not specified
+			add    - the connection is added, but is not brought up, requires a command to activate the connection
+			route  - the connection is added and is activiated if traffic is detected
+			start  - the connection is added and brought up
+			
+			If a connection is managed by the router-ping-tracking option then add should be specified, otherwise
+			start is recommended.
+		-->
+		 <connection-start-up>route</connection-start-up>
+		 
+      </connection>
+          <connection> 
+         <name>SDBANK_B</name>
+         <right-ip>192.168.6.1</right-ip>
+         <right-id-ip>192.168.6.1</right-id-ip>
+         <right-subnet>10.0.128.0/22</right-subnet>
+		 <connection-start-up>route</connection-start-up>
+      </connection>
+      
+      <connection> 
+         <name>SDBANK_C</name>
+         <right-ip>192.168.14.1</right-ip>
+         <right-id-ip>192.168.14.1</right-id-ip>
+         <right-subnet>10.14.66.0/28</right-subnet>
+		 <connection-start-up>route</connection-start-up>
+      </connection>
+      
+      <connection> 
+         <name>SDBANK_D</name>
+         <right-ip>192.168.14.1</right-ip>
+         <right-id-ip>192.168.14.1</right-id-ip>
+         <right-subnet>10.8.128.0/22</right-subnet>
+		 <connection-start-up>route</connection-start-up>
+      </connection>
+
+      <secondary_network>
+          <connection>
+             <name>LTE_NET</name>
+             <left-subnet>10.6.96.0/30</left-subnet>
+             <right-ip>192.168.7.1</right-ip>
+             <right-id-ip>192.168.7.1</right-id-ip>
+             <right-subnet>10.0.128.0/22</right-subnet>
+             <right-global-ip>192.168.7.1</right-global-ip>
+             <connection-mode>NAT</connection-mode>
+             <connection-start-up>route</connection-start-up>
+          </connection>
+      </secondary_network>
+	
+  </ipsec>
+  <switch>
+    <entry>
+      <port>0</port>
+      <enabled>true</enabled>
+      <speed>100</speed>
+      <duplex>full</duplex>
+    </entry>
+    <entry>
+      <port>1</port>
+      <enabled>true</enabled>
+      <speed>100</speed>
+      <duplex>full</duplex>
+    </entry>
+    <entry>
+      <port>2</port>
+      <enabled>false</enabled>
+      <speed>100</speed>
+      <duplex>full</duplex>
+    </entry>
+    <entry>
+      <port>3</port>
+      <enabled>false</enabled>
+      <speed>10</speed>
+      <duplex>full</duplex>
+    </entry>
+  </switch>
+  <pvlan>
+     <entry>
+        <from-port>0</from-port>
+        <port-vector>2e</port-vector>
+     </entry>
+     <entry>
+        <from-port>1</from-port>
+        <port-vector>2d</port-vector>
+     </entry>
+     <entry>
+        <from-port>2</from-port>
+        <port-vector>2b</port-vector>
+     </entry>
+     <entry>
+        <from-port>3</from-port>
+        <port-vector>27</port-vector>
+     </entry>
+     <entry>
+        <from-port>4</from-port>
+        <port-vector>0</port-vector>
+     </entry>
+     <entry>
+        <from-port>5</from-port>
+        <port-vector>f</port-vector>
+     </entry>
+     <entry>
+        <from-port>6</from-port>
+        <port-vector>0</port-vector>
+     </entry>
+  </pvlan>
+   <vars>
+     <entry>
+        <TCV>TCV_PARTNER_LINK_ADDR</TCV>
+        <value>172.16.128.1</value>
+     </entry>
+     <entry>
+        <TCV>TCV_PARTNER_LINK_NETMASK</TCV>
+        <value>255.254.0.0</value>
+     </entry>
+     <entry>
+        <TCV>TCV_PARTNER_ADDR</TCV>
+        <value>172.16.128.2</value>
+     </entry>
+     <entry>
+        <TCV>TCV_CDAR_PORT</TCV>
+        <value>12979</value>
+     </entry>
+     <entry>
+        <TCV>TCV_CA_URL</TCV>
+        <value>http://CA/certsrv/mscep/mscep.dll</value>
+     </entry>
+     <entry>
+        <TCV>TCV_TRAIN_ADDR</TCV>
+        <value>10.4.128.1</value>
+     </entry>
+     <entry>
+        <TCV>TCV_TRAIN_NETMASK</TCV>
+        <value>255.255.128.0</value>
+     </entry>
+     <entry>
+        <TCV>TCV_SECURE_ADDR</TCV>
+        <value>10.6.88.1</value>
+     </entry>
+     <entry>
+        <TCV>TCV_SECURE_ADDR_ALT</TCV>
+        <value>10.6.88.2</value>
+     </entry>
+     <entry>
+        <TCV>TCV_SECURE_ADDR_SCND_NET</TCV>
+        <value>10.6.96.1</value>
+     </entry>
+     <entry>
+        <TCV>TCV_SECURE_NETMASK</TCV>
+        <value>255.255.255.252</value>
+     </entry>
+     <entry>
+        <TCV>TCV_PRIVATE_ADDR</TCV>
+        <value>192.168.1.2</value>
+     </entry>
+     <entry>
+        <TCV>TCV_PRIVATE_NETMASK</TCV>
+        <value>255.255.255.0</value>
+     </entry>
+     <entry>
+        <TCV>TCP_PRIVATE_PARTNER</TCV>
+        <value>192.168.1.1</value>
+     </entry>
+  </vars>
+   <network>
+	<route>
+         <ip>172.16.0.0</ip>
+         <subnet>255.254.0.0</subnet>
+         <gateway>172.16.128.2</gateway>
+	 <enabled>true</enabled>
+	</route>
+	<route>
+         <ip>192.168.7.0</ip>
+         <subnet>255.255.255.248</subnet>
+         <gateway>172.16.128.2</gateway>
+	 <enabled>true</enabled>
+	</route>
+	<route>
+         <ip>192.168.6.0</ip>
+         <subnet>255.255.255.248</subnet>
+         <gateway>172.16.128.2</gateway>
+	 <enabled>true</enabled>
+	</route>
+	<route>
+         <ip>192.168.15.0</ip>
+         <subnet>255.255.255.248</subnet>
+         <gateway>172.16.128.2</gateway>
+	 <enabled>true</enabled>
+	</route>
+	<route>
+         <ip>192.168.14.0</ip>
+         <subnet>255.255.255.248</subnet>
+         <gateway>172.16.128.2</gateway>
+	 <enabled>true</enabled>
+	</route>
+	<route>
+         <ip>172.30.128.0</ip>
+         <subnet>255.255.255.248</subnet>
+         <gateway>172.16.128.2</gateway>
+	 <enabled>true</enabled>
+	</route>
+   </network>
+    <hostsconfig>
+     <localhost>
+        <address>127.0.0.1</address>
+        <name>MRVL_LINUX</name>
+        <localdomain>localhost.localdomain</localdomain>
+     </localhost>
+     <certauthority>
+        <address>10.0.128.2</address>
+        <name>CA</name>
+        <!--
+              CA server protocol SCEP or NDES
+              SCEP for WS2003 and earlier, NDES for WS2008 and later
+        -->
+        <ca_protocol>NDES</ca_protocol>
+     </certauthority>
+     <uNTP1>0.0.0.0</uNTP1>
+     <uNTP2>0.0.0.0</uNTP2>
+     <uNTP3>0.0.0.0</uNTP3>
+     <tNTP1>10.0.128.5</tNTP1>
+     <tNTP2>10.8.128.5</tNTP2>
+     <tNTP3>0.0.0.0</tNTP3>
+     <trustedTrapSink>10.0.128.2</trustedTrapSink>
+     <untrustedTrapSink>10.0.128.2</untrustedTrapSink>
+	 <generic>
+		<entry>
+			<hostname>VOBC-1001</hostname>
+			<ip>10.4.128.2</ip>
+		</entry>
+	 </generic>
+  </hostsconfig>
+      
+   <!--
+        Miscellaneous configuration covering coupling detection, ad-hoc radio
+        network configuration, and arp announcement parameters.
+   -->
+   <misc>
+      <!--
+           CDARd train coupling detection and reconfiguration functionality for re-configurable trains.
+           Can be on or off.
+      -->
+      <coupling-detection>off</coupling-detection> 
+      <!--
+           For projects that do not have untrusted NTP or do not want to sycn time to U NTP, the time can be obtained syncing to trusted NTP
+           The initial time for trusted CPU will be obtained from certificate that is required to establish an IPsec tunnel.
+       -->
+      <set-time-from-cert>yes</set-time-from-cert>
+      
+   </misc>
+   
+   <!--
+        operating-system specific configuration data; mostly networking. Much
+        is irrelevatn now since they are set at the end of the boot scripting
+        rather than in the initial configuration from /etc/rc.d
+   -->
+   <linux thales:read="0" thales:write="2">
+   
+    <!--
+        dhcp server settings; set low- and high-address to provide a range
+        to clients on the specified subnet. Forward and reverse zone names
+        must match the zone names configured on the DNS server on the NMS.
+        The supplied values are the default DNS installation.
+    -->
+    <dhcp>
+		<low_addr>10.6.88.2</low_addr>
+		<high_addr>10.6.88.3</high_addr>
+			<subnet>10.6.88.0</subnet>
+			<forward_zone>thales.</forward_zone>
+			<reverse_zone>13.10.in-addr.arpa</reverse_zone>
+    </dhcp>
+      
+    <!--
+        dns and resolver configuration - specify the address of the dynamic
+        DNS server
+    -->
+    <dns>10.0.96.63</dns>
+	
+   </linux>
+ <!--
+                Certificate traps. Depending on the % of time left from renewal time till expiration of certificate the respective SNMP trap will be sent when renewal process fails.
+                The renewal time is hard coded to 30 days till expiration of the certificate.
+                The marker field is the percentage of the renewal window.
+                The name field indicate the severity level that the marker is for. For example:
+                if the marker value for the Warning is 80, this means if there are 80 percent renewal time left and there is a
+                certificate renewal error, then the Warning trap is sent out. If the marker value for the Major is 60, then if there is 60 percent renewal time left and there is a certificate renewal
+                error send then the Major error trap is sent and so on.
+                The higher severity takes precedent than the lower ones for example, if critical marker is raised to 90, then it will send out
+                the critical trap once 90 percent renewal time is left and will not send Warning, Major traps.
+                The level group field should be certificatealarm for certificate renewal traps.
+
+                Visual representation:
+
+                30 days left till expiry |..................................|  expiration time of certificate.
+                                        100% 80%  60%    40%
+    -->
+   <ladder thales:write="3">
+      <level>
+         <name>Warning</name>
+                 <group>certificatealarm</group>
+         <marker>80</marker>
+      </level>
+      <level>
+         <name>Major</name>
+                 <group>certificatealarm</group>
+         <marker>60</marker>
+      </level>
+      <level>
+         <name>Critical</name>
+                 <group>certificatealarm</group>
+         <marker>40</marker>
+      </level>
+   </ladder>
+   <monitor-untrusted>
+        <enable>off</enable>
+        <ping-interval>5</ping-interval>
+        <b2b-count>10</b2b-count>
+   </monitor-untrusted>   
+  <reboot-log>
+     <records-limit>128</records-limit>
+     <records-file>/mnt/data/etc/bootlog.txt</records-file>
+  </reboot-log>
+  <oisd>
+    <enabled>true</enabled>
+    <remote_log>10.0.128.1</remote_log>
+    <remote_log_port>10002</remote_log_port>
+    <remote_log_proto>tcp</remote_log_proto>
+    <heartbeat_interval>3600</heartbeat_interval>
+    <filetrip_interval>10</filetrip_interval>
+    <filetrip_guard>600</filetrip_guard>
+  </oisd>  
+</config>
+
+
+

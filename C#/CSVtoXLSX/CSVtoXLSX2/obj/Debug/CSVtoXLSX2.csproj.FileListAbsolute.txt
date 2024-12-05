@@ -1,0 +1,7 @@
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\bin\Debug\CSVtoXLSX2.exe.config
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\bin\Debug\CSVtoXLSX2.exe
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\bin\Debug\CSVtoXLSX2.pdb
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\obj\Debug\CSVtoXLSX2.csproj.ResolveComReference.cache
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\obj\Debug\CSVtoXLSX2.csproj.CoreCompileInputs.cache
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\obj\Debug\CSVtoXLSX2.exe
+C:\Users\T0204775\source\repos\CSVtoXLSX2\CSVtoXLSX2\obj\Debug\CSVtoXLSX2.pdb

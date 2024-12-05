@@ -1,0 +1,42 @@
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\bin\Debug\TSNRSNGaps.exe.config
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\bin\Debug\TSNRSNGaps.exe.manifest
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\bin\Debug\TSNRSNGaps.application
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\bin\Debug\TSNRSNGaps.exe
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\bin\Debug\TSNRSNGaps.pdb
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNGapsMenu.csproj.ResolveComReference.cache
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\MainWindow.g.cs
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\App.g.cs
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNRSNGaps_MarkupCompile.cache
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNRSNGaps_MarkupCompile.lref
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\MainWindow.baml
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNRSNGaps.g.resources
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNGapsMenu.Properties.Resources.resources
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNGapsMenu.csproj.GenerateResource.cache
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNGapsMenu.csproj.CoreCompileInputs.cache
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNRSNGaps.exe.manifest
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNRSNGaps.application
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNRSNGaps.exe
+C:\Users\T0204775\source\repos\TSNGapsMenu\TSNGapsMenu\obj\Debug\TSNRSNGaps.pdb
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\bin\Debug\TSNRSNGaps.exe.config
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\bin\Debug\TSNRSNGaps.exe.manifest
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\bin\Debug\TSNRSNGaps.application
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\bin\Debug\TSNRSNGaps.exe
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\bin\Debug\TSNRSNGaps.pdb
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNGapsMenu.csproj.ResolveComReference.cache
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\MainWindow.g.cs
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\App.g.cs
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNRSNGaps_MarkupCompile.cache
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNRSNGaps_MarkupCompile.lref
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\MainWindow.baml
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNRSNGaps.g.resources
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNGapsMenu.Properties.Resources.resources
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNGapsMenu.csproj.GenerateResource.cache
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNGapsMenu.csproj.CoreCompileInputs.cache
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNRSNGaps.exe.manifest
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNRSNGaps.application
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNRSNGaps.exe
+C:\Users\T0204775\Desktop\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNRSNGaps.pdb
+G:\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\bin\Debug\TSNRSNGaps.exe.config
+G:\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNGapsMenu.csproj.ResolveComReference.cache
+G:\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNRSNGaps.exe
+G:\Completed Projects\[SOURCE FILES]\C#\TSNRSNGaps\TSNGapsMenu\obj\Debug\TSNRSNGaps.pdb

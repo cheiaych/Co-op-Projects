@@ -1,0 +1,83 @@
+
+; Port Forwarding configuration file
+; MRU1A
+
+;ExternalIp ExternalPort 
+E 10.6.88.1 20000 
+;InternalIp 
+I 10.4.128.1 
+;Broadcast Destination 
+;InternalPort BroadcastIp BroadcastPort [1|0]Filter StartByte NumBytes [0|1]BigEndian 
+
+;ZC1 Replica 1
+P 20011 10.4.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1602 10.0.128.3 52118
+
+
+;ZC1 Replica 2
+P 20012 10.4.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1602 10.8.128.3 52118
+
+;ZC2 Replica 1
+P 20013 10.4.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1602 10.0.128.4 52118
+
+;ZC2 Replica 2
+P 20014 10.4.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1602 10.8.128.4 52118
+
+;VOBC->SMIO R1 Configuration
+;-----------------------------------
+;Config for the main ATS servers
+;InternalPort BroadcastIp BroadcastPort [1|0]Filter StartByte NumBytes [0|1]BigEndian
+P 20050 10.4.255.255 20000 1 6 1 0
+;ID DestinationIp DestinationPort
+3 10.0.128.5 20000
+
+;VOBC->SMIO R2 Configuration
+;-----------------------------------
+;Config for the main ATS servers
+;InternalPort BroadcastIp BroadcastPort [1|0]Filter StartByte NumBytes [0|1]BigEndian
+P 20051 10.4.255.255 20000 1 6 1 0
+;ID DestinationIp DestinationPort
+3 10.8.128.5 20000
+
+;SRS 1 Replica 1
+P 20001 10.4.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1 10.0.128.5 52118
+4 10.16.96.5 52119
+
+;SRS 1 Replica 2
+P 20002 10.4.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1 10.8.128.5 52118
+4 10.20.96.5 52119
+
+;SRS 2 Replica 1
+P 20003 10.14.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1 10.0.96.8 52118
+4 10.16.96.8 52119
+
+;SRS 2 Replica 2
+P 20004 10.14.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1 10.4.96.8 52118
+4 10.20.96.8 52119
+
+;SRS 3 Replica 1
+P 20005 10.14.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1 10.0.96.11 52118
+4 10.16.96.11 52119
+
+;SRS 3 Replica 2
+P 20006 10.14.255.255 20000 1 6 2 0 
+;ID DestinationIp DestinationPort 
+1 10.4.96.11 52118
+4 10.20.96.11 52119

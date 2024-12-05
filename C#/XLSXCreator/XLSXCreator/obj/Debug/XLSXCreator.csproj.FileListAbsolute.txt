@@ -1,0 +1,8 @@
+C:\Users\T0204775\source\repos\XLSXCreator\XLSXCreator\bin\Debug\XLSXCreator.exe.config
+C:\Users\T0204775\source\repos\XLSXCreator\XLSXCreator\bin\Debug\XLSXCreator.exe
+C:\Users\T0204775\source\repos\XLSXCreator\XLSXCreator\bin\Debug\XLSXCreator.pdb
+C:\Users\T0204775\source\repos\XLSXCreator\XLSXCreator\obj\Debug\XLSXCreator.csproj.ResolveComReference.cache
+C:\Users\T0204775\source\repos\XLSXCreator\XLSXCreator\obj\Debug\XLSXCreator.csproj.CoreCompileInputs.cache
+C:\Users\T0204775\source\repos\XLSXCreator\XLSXCreator\obj\Debug\XLSXCreator.exe
+C:\Users\T0204775\source\repos\XLSXCreator\XLSXCreator\obj\Debug\XLSXCreator.pdb
+C:\Users\T0204775\source\repos\XLSXCreator\XLSXCreator\obj\Debug\XLSXCreator.csprojAssemblyReference.cache
